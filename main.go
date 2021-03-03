@@ -9,6 +9,9 @@ import (
  "strings"
 )
 
+
+
+
 func main(){
 
  startPtr:=flag.String("start","defaultValue_Th4tn3v3r_Ex1st","the first string")
@@ -19,7 +22,19 @@ func main(){
  startLikePtr:=flag.String("start-like","defaultValue_Th4tn3v3r_Ex1st","part the first string")
  endLikePtr:=flag.String("end-like","defaultValue_Th4tn3v3r_Ex1st","part of end string")
 
+ flag.Usage = func() {
+  fmt.Fprintf(os.Stderr, "Extractor : a binary to extract strings between two boundary. v:0.1\n")
+    
+  flag.VisitAll(func(f *flag.Flag) {
+    fmt.Fprintf(os.Stderr, "\t-%v: %v\n", f.Name,f.Usage) // f.Name, f.Value
+  })
+ }
+
+
  flag.Parse()
+  
+
+
  var hasStarted =false
 
  scanner := bufio.NewScanner(os.Stdin)
