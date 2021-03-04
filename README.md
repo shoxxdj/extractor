@@ -1,5 +1,5 @@
 # extractor
-A (useless) binary to extract text between two boundary
+A (useless) binary to extract text between two boundary from stdin to stdout
 
 ## Install 
 ```
@@ -24,7 +24,30 @@ Usage of extractor:
 ```
 
 ## Example 
+```
+>> cat beers.txt
+Delirium
+Chouffe
+Triple karmeliet 
+Effet Papillon
+Azimut
+K8
+Mort subite
+Paix Dieu
+BBT
+Woolf
+Kanaha beer
+Olympic white
+Terko
 
+>> cat beers.txt | extractor -start="Azimut" -end="Woolf"
+Azimut
+K8
+Mort subite
+Paix Dieu
+BBT
+Woolf
+```
 
 ## Tips 
 
