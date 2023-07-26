@@ -46,7 +46,7 @@ func main(){
   if(hasStarted){
    fmt.Println(text)
   }
-  if(text == *endPtr || strings.Contains(text,*endLikePtr)){
+  if((text == *endPtr || strings.Contains(text,*endLikePtr)) && hasStarted ){
    if(!*continuePtr){
     return 
    }
